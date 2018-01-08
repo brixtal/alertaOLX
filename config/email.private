@@ -1,6 +1,6 @@
 smtp=smtp.gmail.com
 port= 587
-alias=Your Name
+alias=Your Names
 user=user.google@gmail.com
 password=password
 from=user.google@gmail.com

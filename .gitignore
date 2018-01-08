@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
 # C extensions
 *.so
 
@@ -103,3 +104,4 @@ ENV/
 
 #Others
 *.ini
+*.private

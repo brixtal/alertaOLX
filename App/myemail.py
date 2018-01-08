@@ -6,7 +6,7 @@ class MyEmail:
         def enviarEmail(self, mensagem):
 
                 clas = ReadConfig()
-                config = clas.getConfig('../config/email.private')
+                config = clas.getConfig('../config/gmail.private')
                 smtp = smtplib.SMTP(config.get('smtp'), config.get('port'))
                 smtp.starttls()
                 smtp.login(config.get('user'), config.get('password'))

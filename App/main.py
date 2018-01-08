@@ -5,10 +5,13 @@ from olx import Olx
 from anuncio import Anuncio
 from datetime import *
 from myemail import MyEmail
+import sys
 
 offset = 0
 
-url = "http://rj.olx.com.br/veiculos-e-acessorios/carros?me=20000&ms=5000&pe=40000&ps=20000&rs=33&o="
+#url = "http://rj.olx.com.br/veiculos-e-acessorios/carros?me=20000&ms=5000&pe=40000&ps=20000&rs=33&o="
+
+url = sys.argv[1]
 
 olx = Olx()
 
