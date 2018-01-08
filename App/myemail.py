@@ -22,7 +22,7 @@ Subject: %s
 
 """ % (config.get('alias'), ', '.join(para), config.get('subject'), mensagem)
 
-                print msg
+                
         
                 smtp.sendmail(de, para, msg)
 
