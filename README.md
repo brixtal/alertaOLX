@@ -14,10 +14,10 @@ A proposta é muito simples:
 # Como configurar o sistema alertaOLX?
 O **alertaOLX** foi escrito em Python e pode ser executado tanto em Windows, quanto em Linux.
 Para executá-lo, siga os seguintes passos:
-* Instale o Python 2.7.14 ¹
+* Instale o Python 2.7.14
 	* Para Windows, baixe o executável em https://www.python.org/downloads/release/python-2714/
 	* Para Linux, siga os passos descritos em https://tecadmin.net/install-python-2-7-on-ubuntu-and-linuxmint/
-* Baixe o código-fonte do **alertaOLX**, colocando-o onde preferir;
+* Baixe o código-fonte do **alertaOLX**, colocando-o no diretório que preferir;
 * Para executar o sistema, faça a chamada tradicional do Python, passando como parâmetros o local do arquivo main.py (contido no diretório App), e a URL da OLX já com os parâmetros do filtro que você desejar.
 Por exemplo:
 ```
@@ -29,7 +29,7 @@ Se optar por utilizar o sistema no Linux, uma das maneiras de realizar a automat
 ```
 crontab -e
 ```
-* Colocar os parâmetros de agendamento, seguido do comando a ser executado: 
+* Colocar os parâmetros de agendamento, seguido do comando a ser executado, como no exemplo abaixo:
 ```
 0 * * * 1-4 /home/ubuntu/alertaOLX/main.py 'http://rj.olx.com.br/imoveis/venda?gsp=3&pe=900000&ps=200000&roe=4&ros=2&se=7&ss=1'
 */15 * * * 5-6 /home/ubuntu/alertaOLX/main.py 'http://rj.olx.com.br/imoveis/venda?gsp=3&pe=900000&ps=200000&roe=4&ros=2&se=7&ss=1'
@@ -38,10 +38,10 @@ crontab -e
 ```
 > No exemplo acima, a primeira linha faz com que o agendador execute o sistema de alerta de segunda a quinta, de hora em hora; a segunda linha faz com que seja executado sábado e domingo a cada 15 minutos; e a última linha faz com que o sistema seja executado a cada 30 minutos aos domingos. Mais detalhes de como usar o crontab pode ser encontrado em https://canaltech.com.br/linux/cron-facilite-o-agendamento-de-tarefas-no-linux/
 
-# Por que em Python 2.7 e não no 3?
+# Por que em Python 2.7 e não em Python 3?
 
-Esse sistema começou como uma forma de aprender a linguagem Python para uma prova, cuja ementa exigia a aplicação de Python 2.7. Em breve será lançada a atualização do **alertaOLX** para Python 3.6.
+Esse sistema começou como uma forma de aprender a linguagem Python para a realização de uma prova, cuja ementa exigia a aplicação de Python 2.7. Em breve será lançada a atualização do **alertaOLX** para Python 3.6.
 
 # Por que commits em português?
 
-Como esse é um sistema majoritariamente usado por brasileiros, escrever as informações em pt-br ajuda bastante na usabilidade, principalmente para usuários que não tenham tanto domínio de programação e queiram entender o funcionamento do código. Partes genéricas e que possam ser utilizadas em outros projetos Python estão com comentários e commits inglês ;-)
+Como esse é um sistema majoritariamente usado por brasileiros, nada mais justo que suas informações e código sejam escritos em pt-br. Com isso espera-se que seus usários consigam utilzar o sistema de maneira simples, principalmente para usuários que não tenham tanto domínio de programação e queiram entender o funcionamento do código. Viva o bom português! ;-)
