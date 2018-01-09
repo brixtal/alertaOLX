@@ -38,6 +38,8 @@ crontab -e
 ```
 > No exemplo acima, a primeira linha faz com que o agendador execute o sistema de alerta de segunda a quinta, de hora em hora; a segunda linha faz com que seja executado sábado e domingo a cada 15 minutos; e a última linha faz com que o sistema seja executado a cada 30 minutos aos domingos. Mais detalhes de como usar o crontab pode ser encontrado em https://canaltech.com.br/linux/cron-facilite-o-agendamento-de-tarefas-no-linux/
 
+OBS: Não tive a oportunidade de testar em MacOS, mas creio que não sejam necessárias modificações para a execução, pricipalmente porque o sistema já roda sem precisar de moficação no Linux.
+
 # Por que em Python 2.7 e não em Python 3?
 
 Esse sistema começou como uma forma de aprender a linguagem Python para a realização de uma prova, cuja ementa exigia a aplicação de Python 2.7. Em breve será lançada a atualização do **alertaOLX** para Python 3.6.
