@@ -70,6 +70,7 @@ while offset < qtdPaginas:
         if(anuncio.dataHoraAnuncio <= ultimaAtulizacao):
             offset = qtdPaginas
             i = 50
+            print "[Mensagem] Sem novos anuncios."
         else:
                 email.write(anuncio.tituloAnuncio)
                 email.write('\n')
