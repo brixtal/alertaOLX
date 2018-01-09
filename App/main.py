@@ -9,9 +9,9 @@ import sys
 
 offset = 0
 
-#url = "http://rj.olx.com.br/veiculos-e-acessorios/carros?me=20000&ms=5000&pe=40000&ps=20000&rs=33"
+url = "http://rj.olx.com.br/veiculos-e-acessorios/carros?me=20000&ms=5000&pe=40000&ps=20000&rs=33"
 
-url = sys.argv[1]
+#url = sys.argv[1]
 
 url = url + "&o="
 
@@ -46,6 +46,8 @@ anunciosNovos = 0
 email = open("../sysout/anuncioOLX.out", 'w')
 while offset < qtdPaginas:
 
+    print "[Mensagem] Abrindo pagina #", str(offset+1)
+
     pagina = olx.getHtml(url+str(offset))
     
     indice = pagina.find(olx.getTagInicioListaAnuncios()) + olx.getTamanhoTagInicioListaAnuncios()
@@ -55,7 +57,7 @@ while offset < qtdPaginas:
     i = 0
 
     while i in range(0,50):
-        print "[Mensagem] Lendo anuncio #", i
+        print "[Mensagem] Lendo anuncio #", str(i+1)
         anuncio.linkAnuncio = anuncio.obterLinkAnuncio(pagina)
 
         anuncio.tituloAnuncio = anuncio.obterTituloAnuncio(pagina)
@@ -84,7 +86,6 @@ while offset < qtdPaginas:
 
         if(offset == 0 and i == 0):
             configuracao = open("../sysout/ultimaAtualizacao.out", 'w')
-            print anuncio.dataHoraAnuncio
             configuracao.write(anuncio.dataHoraAnuncio.strftime("%Y%m%d%H:%M"))
             configuracao.close()
         
