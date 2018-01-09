@@ -1,4 +1,4 @@
-# -*- coding: cp1252 -*-
+# encoding: utf-8
 import urllib2
 from HTMLParser import HTMLParser
 from olx import Olx
@@ -9,9 +9,9 @@ import sys
 
 offset = 0
 
-url = "http://rj.olx.com.br/veiculos-e-acessorios/carros?me=20000&ms=5000&pe=40000&ps=20000&rs=33"
+#url = "http://rj.olx.com.br/rio-de-janeiro-e-regiao/zona-oeste/jacarepagua/imoveis/aluguel/apartamentos?gsp=1"
 
-#url = sys.argv[1]
+url = sys.argv[1]
 
 url = url + "&o="
 
@@ -68,9 +68,11 @@ while offset < qtdPaginas:
 
         anuncio.dataHoraAnuncio = anuncio.obterDataHoraAnuncio(pagina)
         if(anuncio.dataHoraAnuncio <= ultimaAtulizacao):
-            offset = qtdPaginas
+            if(i == 0 and offset == 0):
+                print "[Mensagem] Sem novos anuncios."
+            offset = qtdPaginas            
             i = 50
-            print "[Mensagem] Sem novos anuncios."
+            
         else:
                 email.write(anuncio.tituloAnuncio)
                 email.write('\n')
