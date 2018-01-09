@@ -5,6 +5,7 @@ class MyEmail:
 
         def enviarEmail(self, mensagem):
 
+
                 clas = ReadConfig()
                 config = clas.getConfig('../config/gmail.private')
                 smtp = smtplib.SMTP(config.get('smtp'), config.get('port'))
@@ -22,8 +23,12 @@ Subject: %s
 
 """ % (config.get('alias'), ', '.join(para), config.get('subject'), mensagem)
 
-                
+                print "[Mensagem] Enviando e-mail..."
         
+                print msg
+                
                 smtp.sendmail(de, para, msg)
+
+                print "[Mensagem] E-mail enviado."
 
                 smtp.quit()

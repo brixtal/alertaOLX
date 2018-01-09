@@ -9,7 +9,7 @@ import sys
 
 offset = 0
 
-#url = "http://rj.olx.com.br/rio-de-janeiro-e-regiao/zona-oeste/jacarepagua/imoveis/aluguel/apartamentos?gsp=1"
+#url = "http://rj.olx.com.br/imoveis?"
 
 url = sys.argv[1]
 
