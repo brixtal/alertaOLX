@@ -8,7 +8,7 @@ class Olx:
     __tagInicioListaAnuncios = '<ul class="list" id="main-ad-list">'
     __marcadorLinkAnuncio = 'href="'
     __marcadorTituloAnuncio = '<h3 class="OLXad-list-title mb5px">'
-    __marcadorInfosAdicionais = '<p class="text detail-specific mt5px">'
+    __marcadorInfosAdicionais = '<p class="text detail-specific">'
     __marcadorPrecoAnuncio = '<p class="OLXad-list-price">'
     __marcadorDataAnuncio = '<p class="text mb5px">'
     __marcadorHoraAnuncio = '<p class="text mb5px">'

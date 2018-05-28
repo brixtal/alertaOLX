@@ -18,19 +18,38 @@ class Anuncio:
         pass
 
     def getTexto(self,pagina, indice, limitador = '<'):
-        texto = ''
-        char = ''
-        while char != limitador:
-            char = pagina[indice]
-            if char != '\n' and char != '\r' and char != '\t':
-                texto += char
-            indice += 1
-        texto = texto[:len(texto)-1]
-        return texto.strip()
+		texto = ''
+		char = ''
+		while char != limitador:
+			char = pagina[indice]
+			if char != '\n' and char != '\r' and char != '\t':
+				texto += char
+			indice += 1
+		texto = texto[:len(texto)-1]
+		return texto.strip()
+
+    def limpaLink(self,texto):
+		indice=0
+		char = ''
+		link = ''
+		ignore = False
+		while indice <= 1000:
+			char = texto[indice]
+			if ignore == False:	
+				if char != '?':
+					link += char
+				else :
+					print "Peguei ?"
+					return link.strip()            
+			indice += 1
+		return link.strip()
+
     
     def obterLinkAnuncio(self, pagina):
         indice = pagina.find(olx.getMarcadorLinkAnuncio()) + olx.getTamanhoMarcadorLinkAnuncio()
-        return self.getTexto(pagina, indice, '"')
+        texto = self.getTexto(pagina, indice, '"')        
+        return self.limpaLink(texto.strip())
+		
 
     def obterTituloAnuncio(self, pagina):
         indice = pagina.find(olx.getMarcadorTituloAnuncio()) + olx.getTamanhoMarcadorTituloAnuncio()
@@ -77,3 +96,5 @@ class Anuncio:
         data = dia.strftime("%Y%m%d")
         dia = datetime.strptime(data+texto, '%Y%m%d%H:%M')
         return dia
+
+
