@@ -7,7 +7,7 @@ class Olx:
     __tagQtdTotal = 'class="qtd">'
     __tagInicioListaAnuncios = '<ul class="list" id="main-ad-list">'
     __marcadorLinkAnuncio = 'href="'
-    __marcadorTituloAnuncio = '<h3 class="OLXad-list-title mb5px">'
+    __marcadorTituloAnuncio = '<h2 class="OLXad-list-title mb5px">'
     __marcadorInfosAdicionais = '<p class="text detail-specific">'
     __marcadorPrecoAnuncio = '<p class="OLXad-list-price">'
     __marcadorDataAnuncio = '<p class="text mb5px">'

@@ -25,7 +25,7 @@ class Anuncio:
 			if char != '\n' and char != '\r' and char != '\t':
 				texto += char
 			indice += 1
-		texto = texto[:len(texto)-1]
+		texto = texto[:len(texto)-1]		
 		return texto.strip()
 
     def limpaLink(self,texto):
@@ -33,15 +33,19 @@ class Anuncio:
 		char = ''
 		link = ''
 		ignore = False
-		while indice <= 1000:
-			char = texto[indice]
-			if ignore == False:	
-				if char != '?':
-					link += char
-				else :
-					print "Peguei ?"
-					return link.strip()            
-			indice += 1
+		print texto
+		print len(texto)
+		while indice < len(texto):
+                    print indice
+                    
+		    char = texto[indice]
+                    if ignore == False:	
+			if char != '?':
+                            link += char
+                        else :
+                            print "Peguei ?"
+                            return link.strip()            
+		    indice += 1
 		return link.strip()
 
     

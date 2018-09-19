@@ -44,8 +44,9 @@ print ultimaAtualizacaoStr
 ultimaAtulizacao = datetime.strptime(ultimaAtualizacaoStr, '%Y%m%d%H:%M')
 anunciosNovos = 0
 email = open("../sysout/anuncioOLX.out", 'w')
-while offset < qtdPaginas:
-
+print qtdPaginas
+while offset <= qtdPaginas:
+    
     print "[Mensagem] Abrindo pagina #", str(offset+1)
 
     pagina = olx.getHtml(url+str(offset))
@@ -55,8 +56,10 @@ while offset < qtdPaginas:
     pagina = pagina[indice:]
 
     i = 0
-
-    while i in range(0,50):
+    limitador = qtdAnunciosPorPagina
+    if(qtdAnuncios < qtdAnunciosPorPagina):
+        limitador = qtdAnuncios
+    while i in range(0,limitador):
         print "[Mensagem] Lendo anuncio #", str(i+1)
         anuncio.linkAnuncio = anuncio.obterLinkAnuncio(pagina)
 
